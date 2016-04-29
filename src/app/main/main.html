@@ -2,10 +2,25 @@
   <img
     class="main-image"
     src="/assets/images/Gavinburn_Website_Screenshot.jpg"
+    ng-dblclick="main.addPin($event)"
+    ng-click="main.clearSelectedPin()">
   />
   <div class="pins">
-    <div class="pin">
-      <div class="marker">&nbsp;</div>
+    <div
+      class="pin"
+      ng-repeat="pin in main.pins"
+      ng-style="{top: pin.y + 'px', left: pin.x + 'px'}"
+    >
+      <div
+        class="marker"
+        ng-click="main.selectPin(pin)"
+      >&nbsp;</div>
+      <div
+        class="pin-info"
+        ng-if="pin == main.selectedPin"
+      >
+        pin-info here
+      </div>
     </div>
   </div>
 </div>
