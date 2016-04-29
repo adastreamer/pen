@@ -3,10 +3,14 @@
 // bower:scss
 // endbower
 
-
 .main-container{
   position: relative;
   margin: 0 auto;
   width: 920px;
   background: red;
+
+  .main-image{
+  	position: absolute;
+  	width: 100%;
+  }
 }
