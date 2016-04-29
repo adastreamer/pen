@@ -7,7 +7,6 @@
   position: relative;
   margin: 0 auto;
   width: 920px;
-  background: red;
 
   .main-image{
     position: absolute;
@@ -20,20 +19,67 @@
     .pin{
       position: absolute;
       .marker{
-      	width: 14px;
-      	height: 14px;
-      	border-radius: 12px;
-      	border: 4px solid white;
-      	background: red;
-      	cursor: pointer;
-      	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        width: 14px;
+        height: 14px;
+        border-radius: 12px;
+        border: 4px solid white;
+        background: red;
+        cursor: pointer;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
       }
       .pin-info{
-      	padding: 20px;
-      	background: white;
-      	display: block;
-      	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      	max-height: 200px;
+        padding: 20px;
+        background: white;
+        display: block;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        position: relative;
+        z-index: 1;
+        
+        width: 300px;
+        .remove-pin{
+          float: right;
+          color: red;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        .comments-block{
+          display: block;
+          width: 100%;
+          margin-top: 50px;
+
+          .comments-list{
+            max-height: 200px;
+            overflow-y: auto;
+
+            .one-comment{
+              display: block;
+              margin-bottom: 20px;
+              border: 1px solid grey;
+              padding: 10px;
+              border-radius: 10px;
+
+              .actions{
+                text-align: right;
+                a{
+                  cursor: pointer;
+                  color: grey;
+                  margin-left: 10px;
+                }
+              }
+            }
+          }
+
+          .new-comment{
+          	display: block;
+            margin-top: 20px;
+
+            textarea{
+              display: block;
+              width: 100%;
+              height: 50px;
+            }
+          }
+        }
       }
     }
   }

@@ -19,7 +19,50 @@
         class="pin-info"
         ng-if="pin == main.selectedPin"
       >
-        pin-info here
+        <a
+          class="remove-pin"
+          ng-click="main.removePin(pin)"
+        >Remove pin</a>
+        <div class="comments-block">
+          <div
+            class="comments-list"
+          >
+            <div
+              class="one-comment"
+              ng-repeat="comment in pin.comments"
+            >
+              <div><i><small>{{comment.username}}</small></i></div>
+              <div ng-if="!comment.isInEditMode">{{comment.message}}</div>
+              <div ng-if="comment.isInEditMode"><textarea ng-model="comment.newMessage"></textarea></div>
+              <div class="actions">
+                <i><small>
+                  <a
+                    ng-if="!comment.isInEditMode"
+                    ng-click="main.startEdit(comment)"
+                  >Edit comment</a>
+                  <a
+                    ng-if="comment.isInEditMode"
+                    ng-click="main.saveEdit(comment)"
+                  >Save</a>
+                  <a
+                    ng-if="comment.isInEditMode"
+                    ng-click="main.cancelEdit(comment)"
+                  >Cancel</a>
+                  <a
+                    ng-if="!comment.isInEditMode"
+                    ng-click="main.removeCommentFromPin(pin, comment)"
+                  >
+                    Remove comment
+                  </a>
+                </small></i>
+              </div>
+            </div>
+          </div>
+          <div class="new-comment">
+            <textarea ng-model="main.newmessage"></textarea>
+            <button ng-click="main.addCommentToPin(pin, main.newmessage, main.username)">COMMENT</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
