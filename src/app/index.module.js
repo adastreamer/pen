@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('pen', ['ngResource', 'ui.router', 'toastr']);
+    .module('pen', ['ngResource', 'ui.router']);
 
 })();

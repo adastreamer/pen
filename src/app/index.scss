@@ -2,3 +2,11 @@
    sass dependencies when defined in the bower.json of your dependencies */
 // bower:scss
 // endbower
+
+
+.main-container{
+  position: relative;
+  margin: 0 auto;
+  width: 920px;
+  background: red;
+}
