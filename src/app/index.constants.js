@@ -4,7 +4,6 @@
 
   angular
     .module('pen')
-    .constant('malarkey', malarkey)
     .constant('moment', moment);
 
 })();
